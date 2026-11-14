@@ -1,7 +1,6 @@
 # FreeKimiAPI
 
-Local **OpenAI/Anthropic-compatible API** for **Kimi Web Chat** (`kimi.ai`), built
-the same way as [FreeDeepseekAPI](https://github.com/ForgetMeAI/FreeDeepseekAPI):
+Local **OpenAI/Anthropic-compatible API** for **Kimi Web Chat** (`kimi.ai`):
 a zero-dependency Node.js server that drives the regular logged-in web session
 from a separate Chrome profile.
 
