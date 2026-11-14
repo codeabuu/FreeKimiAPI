@@ -1,0 +1,16 @@
+# Files not copied into the image (secrets and host-only helpers).
+.git
+.gitignore
+.env
+kimi-auth.json
+*.har
+*.log
+.chrome-for-testing-profile-kimi
+tools
+tests
+scripts
+chrome-extension
+docs
+deploy
+README.md
+LICENSE

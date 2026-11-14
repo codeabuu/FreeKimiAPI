@@ -1,0 +1,29 @@
+{
+  "name": "free-kimi-api",
+  "version": "0.2.0",
+  "description": "OpenAI-compatible local API proxy for Kimi Web Chat (kimi.ai)",
+  "main": "server.js",
+  "bin": {
+    "free-kimi-api": "./server.js",
+    "free-kimi-client": "./client.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "auth": "node scripts/auth.js",
+    "auth:import": "node scripts/auth_import.js",
+    "kimi:auth": "node scripts/kimi_chrome_auth.js",
+    "doctor": "node scripts/doctor.js",
+    "probe": "node scripts/probe.js",
+    "client": "node client.js",
+    "test": "node --check server.js && node --check client.js && node --check lib/env.js && node --check scripts/auth.js && node --check scripts/auth_import.js && node --check scripts/kimi_chrome_auth.js && node --check scripts/doctor.js && node --check scripts/probe.js && node --test tests/unit.test.js tests/integration.test.js tests/vision.test.js tests/accounts.test.js"
+  },
+  "keywords": ["kimi", "moonshot", "proxy", "openai-compatible", "anthropic", "llm", "web-api"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeabuu/FreeKimiAPI.git"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "token": "YOUR_KIMI_ACCESS_TOKEN_HERE",
+  "refreshToken": "YOUR_KIMI_REFRESH_TOKEN_HERE",
+  "cookie": "theme=light; kimi_session_id=YOUR_SESSION_ID_HERE",
+  "shield": "YOUR_X_MSH_SHIELD_DATA_HERE",
+  "deviceId": "YOUR_DEVICE_ID",
+  "sessionId": "YOUR_SESSION_ID",
+  "trafficId": "YOUR_TRAFFIC_ID"
+}

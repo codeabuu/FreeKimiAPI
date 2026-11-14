@@ -1,0 +1,54 @@
+# ── Secrets / credentials ──
+.env
+.env.*
+!.env.example
+.env.local
+.env.*.local
+
+# Kimi sessions and account exports (tokens, cookies, shield headers)
+kimi-auth.json
+kimi-auth*.json
+auth.json
+kimi-accounts.json
+accounts/
+data/accounts/
+*.session.json
+*.cookie
+cookie*.json
+cookies.txt
+
+# Proxy keys / private keys / certificates
+proxy-api-key
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+secrets/
+
+# Raw captures contain live Authorization headers and cookies
+*.har
+*.curl.txt
+chat.curl.txt
+
+# Chrome profiles used by the auth helper
+.chrome-for-testing-profile-kimi/
+.chrome-for-testing-profile-kimi.stale-*/
+.chrome-profile-kimi/
+.chrome-for-testing-profile-*/
+.chrome-profile-*/
+
+# Logs and runtime files
+*.log
+storage.json
+tools/
+tmp/
+temp/
+*.tmp
+
+# Dependencies / OS noise
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini

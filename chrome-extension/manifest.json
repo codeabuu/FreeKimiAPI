@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Kimi Auth Exporter",
+  "version": "1.0",
+  "description": "Extract Kimi Chat credentials from cookies, localStorage and live Chat requests for use with FreeKimiAPI",
+  "permissions": ["cookies", "storage", "webRequest", "downloads", "scripting", "activeTab"],
+  "host_permissions": ["https://www.kimi.ai/*", "https://*.kimi.ai/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.kimi.ai/*", "https://*.kimi.ai/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

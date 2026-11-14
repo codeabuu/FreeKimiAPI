@@ -1,0 +1,48 @@
+# systemd unit for running FreeKimiAPI as a permanent service on a VPS.
+[Unit]
+Description=FreeKimiAPI (OpenAI/Anthropic-compatible proxy for Kimi Web)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=freeKimi
+Group=freeKimi
+WorkingDirectory=/opt/FreeKimiAPI
+Environment=NODE_ENV=production
+Environment=NON_INTERACTIVE=1
+Environment=HOST=127.0.0.1
+Environment=PORT=9657
+Environment=KIMI_AUTH_PATH=/etc/free-kimi-api/kimi-auth.json
+Environment=PROXY_API_KEY_FILE=/etc/free-kimi-api/proxy-api-key
+Environment=REQUIRE_PROXY_API_KEY=1
+# Optional overrides (HOST, KIMI_* settings); later values win.
+EnvironmentFile=-/etc/free-kimi-api/env
+ExecStart=/usr/bin/env node server.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+
+# Hardening: the proxy only reads its code and the auth/key files.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

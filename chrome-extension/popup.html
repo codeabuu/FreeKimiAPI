@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kimi Auth Exporter</title>
+  <style>
+    body { width: 360px; margin: 0; padding: 14px; font: 13px/1.45 system-ui, -apple-system, Segoe UI, sans-serif; background: #14161a; color: #e7e9ee; }
+    h1 { margin: 0 0 6px; font-size: 15px; }
+    p.hint { margin: 0 0 12px; color: #9aa3b2; font-size: 12px; }
+    .row { display: flex; gap: 8px; }
+    button { flex: 1; padding: 8px 10px; border: 1px solid #343a46; border-radius: 7px; background: #22262e; color: #e7e9ee; cursor: pointer; font: inherit; }
+    button.primary { background: #3b6fe0; border-color: #3b6fe0; }
+    button:disabled { opacity: .55; cursor: default; }
+    pre { margin: 12px 0 0; padding: 10px; max-height: 180px; overflow: auto; background: #0d0f13; border: 1px solid #262b34; border-radius: 7px; font-size: 11px; white-space: pre-wrap; word-break: break-all; }
+    .ok { color: #73d18b; } .bad { color: #ef7373; }
+  </style>
+</head>
+<body>
+  <h1>Kimi Auth Exporter</h1>
+  <p class="hint">Open kimi.ai and send one message, then refresh. The live Chat request supplies the token and shield header.</p>
+  <div class="row">
+    <button id="refresh" class="primary">Refresh</button>
+    <button id="download">Download</button>
+  </div>
+  <pre id="out">No credentials captured yet.</pre>
+  <script src="popup.js"></script>
+</body>
+</html>
